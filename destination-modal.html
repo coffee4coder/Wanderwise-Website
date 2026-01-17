@@ -1,0 +1,173 @@
+<div id="destination-modal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+    <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+        <div class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75" onclick="closeDestinationModal()" aria-hidden="true"></div>
+        
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+        
+        <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+            <!-- Modal Header -->
+            <div class="relative">
+                <div id="destination-hero-image" class="w-full h-64 sm:h-80 bg-cover bg-center relative">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                        <button onclick="closeDestinationModal()" class="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-colors focus:outline-none focus:ring-2 focus:ring-white rounded-full p-2" aria-label="Close modal">
+                            <i class="bi bi-x-lg text-xl"></i>
+                        </button>
+                    </div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span id="destination-category-badge" class="px-3 py-1 rounded-full text-xs font-medium bg-primary-600 text-white"></span>
+                            <span id="destination-duration-badge" class="px-3 py-1 rounded-full text-xs font-medium bg-white/20 backdrop-blur-sm text-white"></span>
+                        </div>
+                        <h2 id="destination-modal-title" class="text-3xl sm:text-4xl font-bold mb-2"></h2>
+                        <p id="destination-modal-location" class="text-lg text-gray-200 flex items-center">
+                            <i class="bi bi-geo-alt mr-2"></i>
+                            <span></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="px-6 py-6">
+                <!-- Tab Navigation -->
+                <div class="border-b border-gray-200 mb-6">
+                    <nav class="flex space-x-8" aria-label="Tabs">
+                        <button onclick="switchDestinationTab('overview')" class="destination-tab active whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-t-lg" data-tab="overview">
+                            <i class="bi bi-info-circle mr-2"></i>
+                            Overview
+                        </button>
+                        <button onclick="switchDestinationTab('highlights')" class="destination-tab whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-t-lg" data-tab="highlights">
+                            <i class="bi bi-star mr-2"></i>
+                            Highlights
+                        </button>
+                        <button onclick="switchDestinationTab('itinerary')" class="destination-tab whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-t-lg" data-tab="itinerary">
+                            <i class="bi bi-calendar-event mr-2"></i>
+                            Itinerary
+                        </button>
+                        <button onclick="switchDestinationTab('gallery')" class="destination-tab whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-t-lg" data-tab="gallery">
+                            <i class="bi bi-images mr-2"></i>
+                            Gallery
+                        </button>
+                    </nav>
+                </div>
+
+                <!-- Tab Content -->
+                <div id="destination-tab-content">
+                    <!-- Overview Tab -->
+                    <div id="overview-tab" class="destination-tab-content">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="lg:col-span-2">
+                                <h3 class="text-xl font-bold text-gray-900 mb-4">About This Destination</h3>
+                                <p id="destination-description" class="text-gray-700 leading-relaxed mb-6"></p>
+                                
+                                <div class="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-6 mb-6">
+                                    <h4 class="font-bold text-primary-900 mb-3 flex items-center">
+                                        <i class="bi bi-info-circle text-primary-600 mr-2"></i>
+                                        Quick Facts
+                                    </h4>
+                                    <div class="grid grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <span class="text-gray-600">Duration:</span>
+                                            <span id="destination-duration-fact" class="font-semibold text-gray-900 ml-2"></span>
+                                        </div>
+                                        <div>
+                                            <span class="text-gray-600">Best Time:</span>
+                                            <span class="font-semibold text-gray-900 ml-2">Year Round</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-gray-600">Group Size:</span>
+                                            <span class="font-semibold text-gray-900 ml-2">2-15 People</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-gray-600">Difficulty:</span>
+                                            <span id="destination-difficulty" class="font-semibold text-gray-900 ml-2">Easy</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Reviews Section -->
+                                <div class="mb-6">
+                                    <h4 class="font-bold text-gray-900 mb-4 flex items-center">
+                                        <i class="bi bi-star-fill text-yellow-400 mr-2"></i>
+                                        Recent Reviews
+                                    </h4>
+                                    <div id="destination-reviews" class="space-y-4">
+                                        <!-- Reviews will be loaded here -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="lg:col-span-1">
+                                <!-- Pricing Card -->
+                                <div class="bg-white border-2 border-primary-200 rounded-xl p-6 sticky top-6">
+                                    <div class="text-center mb-4">
+                                        <div class="text-3xl font-bold text-primary-600 mb-1">
+                                            RM <span id="destination-price"></span>
+                                        </div>
+                                        <div class="text-sm text-gray-600">per person</div>
+                                    </div>
+                                    
+                                    <div class="space-y-3 mb-6">
+                                        <div class="flex items-center text-sm text-gray-600">
+                                            <i class="bi bi-check-circle text-green-500 mr-2"></i>
+                                            Professional Guide
+                                        </div>
+                                        <div class="flex items-center text-sm text-gray-600">
+                                            <i class="bi bi-check-circle text-green-500 mr-2"></i>
+                                            Transportation
+                                        </div>
+                                        <div class="flex items-center text-sm text-gray-600">
+                                            <i class="bi bi-check-circle text-green-500 mr-2"></i>
+                                            Entry Tickets
+                                        </div>
+                                        <div class="flex items-center text-sm text-gray-600">
+                                            <i class="bi bi-check-circle text-green-500 mr-2"></i>
+                                            24/7 Support
+                                        </div>
+                                    </div>
+                                    
+                                    <button id="destination-book-btn" onclick="bookDestinationFromModal()" class="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                                        <i class="bi bi-calendar-check mr-2"></i>
+                                        Book Now
+                                    </button>
+                                    
+                                    <div class="mt-4 text-center">
+                                        <button onclick="shareDestination()" class="text-primary-600 hover:text-primary-700 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-lg px-2 py-1">
+                                            <i class="bi bi-share mr-1"></i>
+                                            Share This Destination
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlights Tab -->
+                    <div id="highlights-tab" class="destination-tab-content hidden">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">What Makes This Special</h3>
+                        <div id="destination-highlights-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Highlights will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Itinerary Tab -->
+                    <div id="itinerary-tab" class="destination-tab-content hidden">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Sample Itinerary</h3>
+                        <div id="destination-itinerary" class="space-y-6">
+                            <!-- Itinerary will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Gallery Tab -->
+                    <div id="gallery-tab" class="destination-tab-content hidden">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Photo Gallery</h3>
+                        <div id="destination-gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <!-- Gallery images will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

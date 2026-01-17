@@ -1,0 +1,71 @@
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16 sm:h-20">
+            <button onclick="navigateTo('home')" class="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-lg p-1">
+                <i class="bi bi-airplane text-2xl sm:text-3xl text-primary-600"></i>
+                <span class="text-xl sm:text-2xl font-bold text-gray-900">WanderWise</span>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <button onclick="navigateTo('home')" class="nav-item flex items-center space-x-1 px-3 py-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500" data-page="home">
+                    <i class="bi bi-house text-sm"></i>
+                    <span class="font-medium">Home</span>
+                </button>
+                <button onclick="navigateTo('about')" class="nav-item flex items-center space-x-1 px-3 py-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500" data-page="about">
+                    <i class="bi bi-info-circle text-sm"></i>
+                    <span class="font-medium">About</span>
+                </button>
+                <button onclick="navigateTo('destinations')" class="nav-item flex items-center space-x-1 px-3 py-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500" data-page="destinations">
+                    <i class="bi bi-geo-alt text-sm"></i>
+                    <span class="font-medium">Destinations</span>
+                </button>
+                <button onclick="navigateTo('gallery')" class="nav-item flex items-center space-x-1 px-3 py-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500" data-page="gallery">
+                    <i class="bi bi-images text-sm"></i>
+                    <span class="font-medium">Gallery</span>
+                </button>
+                <button onclick="navigateTo('contact')" class="nav-item flex items-center space-x-1 px-3 py-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500" data-page="contact">
+                    <i class="bi bi-envelope text-sm"></i>
+                    <span class="font-medium">Contact</span>
+                </button>
+                <button onclick="openBookingModal()" class="inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-primary-600 hover:bg-primary-700 text-white focus:ring-primary-500 px-3 py-1.5 text-sm">Book Now</button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500" aria-label="Toggle menu">
+                <i id="mobile-menu-icon" class="bi bi-list text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden py-4 border-t border-gray-200 hidden">
+            <div class="flex flex-col space-y-2">
+                <button onclick="navigateTo('home')" class="mobile-nav-item flex items-center space-x-2 px-4 py-3 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500" data-page="home">
+                    <i class="bi bi-house text-sm"></i>
+                    <span class="font-medium">Home</span>
+                </button>
+                <button onclick="navigateTo('about')" class="mobile-nav-item flex items-center space-x-2 px-4 py-3 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500" data-page="about">
+                    <i class="bi bi-info-circle text-sm"></i>
+                    <span class="font-medium">About</span>
+                </button>
+                <button onclick="navigateTo('destinations')" class="mobile-nav-item flex items-center space-x-2 px-4 py-3 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500" data-page="destinations">
+                    <i class="bi bi-geo-alt text-sm"></i>
+                    <span class="font-medium">Destinations</span>
+                </button>
+                <button onclick="navigateTo('gallery')" class="mobile-nav-item flex items-center space-x-2 px-4 py-3 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500" data-page="gallery">
+                    <i class="bi bi-images text-sm"></i>
+                    <span class="font-medium">Gallery</span>
+                </button>
+                <button onclick="navigateTo('contact')" class="mobile-nav-item flex items-center space-x-2 px-4 py-3 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500" data-page="contact">
+                    <i class="bi bi-envelope text-sm"></i>
+                    <span class="font-medium">Contact</span>
+                </button>
+                <div class="px-4 pt-2">
+                    <button onclick="openBookingModal()" class="w-full inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-primary-600 hover:bg-primary-700 text-white focus:ring-primary-500 px-3 py-1.5 text-sm">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
