@@ -1,0 +1,81 @@
+<div class="pt-16 sm:pt-20">
+    <!-- Hero Section -->
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-primary-50 to-secondary-50 relative overflow-hidden">
+        <div class="absolute top-10 left-10 w-20 h-20 bg-primary-200/30 rounded-full animate-float"></div>
+        <div class="absolute bottom-10 right-10 w-16 h-16 bg-secondary-200/30 rounded-full animate-float" style="animation-delay: 1s;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-fadeIn">
+                <div class="mb-4">
+                    <span class="inline-block bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-4 py-2 rounded-full text-sm font-medium animate-pulse">
+                        🇲🇾 Malaysian & Southeast Asian Destinations
+                    </span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Explore Amazing Destinations
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+                    Discover breathtaking Malaysian locations and carefully crafted travel packages 
+                    designed to create unforgettable memories across Southeast Asia
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="py-8 bg-white border-b sticky top-16 z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4" id="category-filters">
+                <button onclick="filterDestinations('all')" class="category-filter active flex items-center space-x-2 px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105" data-category="all">
+                    <i class="bi bi-globe text-sm"></i>
+                    <span class="font-medium">All Destinations</span>
+                </button>
+                <button onclick="filterDestinations('adventure')" class="category-filter flex items-center space-x-2 px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105" data-category="adventure">
+                    <i class="bi bi-mountain text-sm"></i>
+                    <span class="font-medium">Adventure</span>
+                </button>
+                <button onclick="filterDestinations('cultural')" class="category-filter flex items-center space-x-2 px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105" data-category="cultural">
+                    <i class="bi bi-building text-sm"></i>
+                    <span class="font-medium">Cultural</span>
+                </button>
+                <button onclick="filterDestinations('relaxation')" class="category-filter flex items-center space-x-2 px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105" data-category="relaxation">
+                    <i class="bi bi-sun text-sm"></i>
+                    <span class="font-medium">Relaxation</span>
+                </button>
+                <button onclick="filterDestinations('luxury')" class="category-filter flex items-center space-x-2 px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105" data-category="luxury">
+                    <i class="bi bi-gem text-sm"></i>
+                    <span class="font-medium">Luxury</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Packages -->
+    <section class="py-16 sm:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-fadeIn">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                    Complete Malaysian Travel Packages
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    All-inclusive packages with accommodation, meals, and guided tours across Malaysia and Southeast Asia
+                </p>
+            </div>
+
+            <div id="all-packages" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- All packages will be loaded here -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Destinations Grid -->
+    <section class="py-16 sm:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="destinations-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Destinations will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    
+</div>

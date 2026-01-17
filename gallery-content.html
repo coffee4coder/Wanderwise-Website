@@ -1,0 +1,77 @@
+<div class="pt-16 sm:pt-20">
+    <!-- Hero Section -->
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                Travel Gallery
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+                Explore stunning photography from our travelers' adventures around the world. 
+                Get inspired for your next journey through these breathtaking moments.
+            </p>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="py-8 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4" id="gallery-filters">
+                <button onclick="filterGallery('all')" class="gallery-filter active flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300" data-category="all">
+                    <i class="bi bi-images text-sm"></i>
+                    <span class="font-medium">All Photos</span>
+                </button>
+                <button onclick="filterGallery('destinations')" class="gallery-filter flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300" data-category="destinations">
+                    <i class="bi bi-geo-alt text-sm"></i>
+                    <span class="font-medium">Destinations</span>
+                </button>
+                <button onclick="filterGallery('adventures')" class="gallery-filter flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300" data-category="adventures">
+                    <i class="bi bi-mountain text-sm"></i>
+                    <span class="font-medium">Adventures</span>
+                </button>
+                <button onclick="filterGallery('culture')" class="gallery-filter flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300" data-category="culture">
+                    <i class="bi bi-building text-sm"></i>
+                    <span class="font-medium">Culture</span>
+                </button>
+                <button onclick="filterGallery('luxury')" class="gallery-filter flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300" data-category="luxury">
+                    <i class="bi bi-gem text-sm"></i>
+                    <span class="font-medium">Luxury</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+        <!-- Featured Destinations -->
+    <section class="py-16 sm:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                    Featured Destinations
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Discover the most popular destinations captured by our travelers
+                </p>
+            </div>
+
+            <div id="featured-destinations" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Featured destinations will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Gallery Grid -->
+    <section class="py-16 sm:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Gallery images will be loaded here -->
+            </div>
+
+            <div id="no-images" class="text-center py-12 hidden">
+                <i class="bi bi-images text-6xl text-gray-300 mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-600 mb-2">No images found</h3>
+                <p class="text-gray-500">Try selecting a different category</p>
+            </div>
+        </div>
+    </section>
+
+</div>
